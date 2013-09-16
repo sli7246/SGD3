@@ -43,4 +43,5 @@ ActiveRecord::Schema.define(version: 20130914004504) do
   end
 
   add_index "users", ["authentication_token"], name: "index_users_on_authentication_token", unique: true, using: :btree
+
 end
