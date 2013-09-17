@@ -7,7 +7,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
                                 request.env["omniauth.auth"].extra.raw_info.first_name, 
                                 request.env["omniauth.auth"].extra.raw_info.last_name, 
                                 request.env["omniauth.auth"].info.email, 
-                                current_user)
+                                current_user)                     
 
     if @user.persisted?
       sign_in_and_redirect @user, :event => :authentication #this will throw if @user is not activated
