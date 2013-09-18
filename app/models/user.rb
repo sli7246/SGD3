@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
           :trackable, :validatable, :omniauthable, 
           :omniauth_providers => [:facebook]
 
-  attr_accessor :name
+  attr_accessor :name, :wharton_email, :cluster_number, :class_year, :frequency, :first_dinner, :industry, :hobby, :nationality, :suggestions
 
   # Set up Validations
   validates :first_name, presence: true, length: { maximum: 50 }

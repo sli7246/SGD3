@@ -1,1 +1,86 @@
-<h3>Item Feed</h3>
+<h2>Please provide the following information to help us schedule your dinner</h2>
+
+<div class="row">
+  <div class="span6 offset3">
+	<%= form_for(current_user) do |f| %>
+		<%= f.hidden_field :edit_type, :value => "setup_payments" %>
+		
+		<div class="form-inline row span6" id="row_fields">
+			<div class='span6' id='left_box'>
+				<%= f.label :wharton_email, "Please enter your Wharton email address" %>
+				<%= f.text_field :wharton_email %>
+			</div>
+			<div class="span3" id="left_box">
+				<%= f.label :cluster_number, "Which cluster are you in?" %>
+				<%= f.select(:cluster_number, options_for_select([[1, 1], [2, 2], [3, 3], [4, 4]])) %>
+			</div>
+			<div class="span3"  id="right_box">
+				<%= f.label :class_year, "What is your expected graduation year?" %>
+				<%= f.select(:class_year, options_for_select([[2014, 2014], [2015, 2015]])) %>
+			</div> 
+			<div class='span3' id='left_box'>
+				<%= f.label :frequency, "How often would you like to participate in Small Group Dinners?" %>
+				<%= f.select(:frequency, options_for_select([["every two weeks", "every two weeks"], ["monthly", "monthly"], ["every two months", "every two months"], ["once a semester", "once a semester"]])) %>
+			</div>
+			<div class='span3' id='right_box'>
+				<%= f.label :first_dinner, "Do you want to participate in the very first Small Group Dinner?" %>
+				<%= f.select(:first_dinner, options_for_select([["Yes", "Yes"], ["No", "No"]])) %>
+			</div>
+			<div class='span6' id='left_box'>
+				<%= f.label :industry, "Which industries/job functions are you most interested in?" %>
+				<%= f.text_field :industry %> #Consulting
+				<%= f.text_field :industry %> #CPG, Marketing, Retail
+				<%= f.text_field :industry %> #Entrepreneurship
+				<%= f.text_field :industry %> #Government, Non-Profit
+				<%= f.text_field :industry %> #Health Care
+				<%= f.text_field :industry %> #Investment Banking
+				<%= f.text_field :industry %> #Investment Management, Hedge Funds
+				<%= f.text_field :industry %> #Media, Entertainment
+				<%= f.text_field :industry %> #Private Equity, Venture Capital
+				<%= f.text_field :industry %> #Real Estate
+				<%= f.text_field :industry %> #Technology
+				<%= f.text_field :industry %> #Other
+			</div>
+
+			<div class='span6' id='left_box'>
+				<%= f.label :hobby, "What are your favorite hobbies/interests?" %>
+				<%= f.text_field :hobby %> #Dancing
+				<%= f.text_field :hobby %> #Sports: basketball, football, baseball, hockey
+				<%= f.text_field :hobby %> #Sports: soccer, rugby
+				<%= f.text_field :hobby %> #Sports: golf, tennis
+				<%= f.text_field :hobby %> #Sports: running, swimming
+				<%= f.text_field :hobby %> #Sports: winter
+				<%= f.text_field :hobby %> #Sports: hiking, outdoors
+				<%= f.text_field :hobby %> #Movies, Television
+				<%= f.text_field :hobby %> #Food, Cooking
+				<%= f.text_field :hobby %> #Art, Drawing
+				<%= f.text_field :hobby %> #Music, Singing
+				<%= f.text_field :hobby %> #Reading, Writing
+				<%= f.text_field :hobby %> #Photography
+				<%= f.text_field :hobby %> #Computers, Gaming
+				<%= f.text_field :hobby %> #Shopping
+				<%= f.text_field :hobby %> #Traveling
+				<%= f.text_field :hobby %> #Other
+			</div>
+
+			<div class='span6' id='left_box'>
+				<%= f.label :nationality, "Which nationalities are you affiliated with or want to learn more about?" %>
+				<%= f.text_field :nationality %> #United States
+				<%= f.text_field :nationality %> #East Asia
+				<%= f.text_field :nationality %> #Southeast Asia
+				<%= f.text_field :nationality %> #South Asia
+				<%= f.text_field :nationality %> #Europe
+				<%= f.text_field :nationality %> #Middle East
+				<%= f.text_field :nationality %> #Africa
+				<%= f.text_field :nationality %> #Latin America
+				<%= f.text_field :nationality %> #Other
+			</div>
+
+			<div class='span6' id='left_box'>
+				<%= f.label :suggestions, "Do you have suggestions for other things to include in your profile?" %>
+				<%= f.text_field :suggestions %>
+			</div>
+    	<%= f.submit "Submit", class: "btn btn-default btn-primary vert-form-btn" %> 
+	<% end %>
+  </div>
+</div>
