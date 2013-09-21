@@ -11,10 +11,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130917003236) do
+ActiveRecord::Schema.define(version: 20130921162049) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "hobbies", force: true do |t|
+    t.string "name"
+  end
+
+  create_table "hobbies_users", id: false, force: true do |t|
+    t.integer "hobby_id"
+    t.integer "user_id"
+  end
+
+  create_table "industries", force: true do |t|
+    t.string "name"
+  end
+
+  create_table "industries_users", id: false, force: true do |t|
+    t.integer "industry_id"
+    t.integer "user_id"
+  end
+
+  create_table "nationalities", force: true do |t|
+    t.string "name"
+  end
+
+  create_table "nationalities_users", id: false, force: true do |t|
+    t.integer "nationality_id"
+    t.integer "user_id"
+  end
+
+  create_table "sports", force: true do |t|
+    t.string "name"
+  end
+
+  create_table "sports_users", id: false, force: true do |t|
+    t.integer "sport_id"
+    t.integer "user_id"
+  end
 
   create_table "users", force: true do |t|
     t.string   "salutation"
@@ -40,6 +76,12 @@ ActiveRecord::Schema.define(version: 20130917003236) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "authentication_token"
+    t.string   "wharton_email"
+    t.integer  "class_year"
+    t.string   "frequency"
+    t.string   "first_dinner"
+    t.text     "suggestions"
+    t.integer  "cluster_number"
   end
 
   add_index "users", ["authentication_token"], name: "index_users_on_authentication_token", unique: true, using: :btree

@@ -1,17 +1,19 @@
 class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
   before_save :ensure_authentication_token
   include ActiveModel::ForbiddenAttributesProtection
   
   has_many :advertisements, dependent: :destroy
+  has_and_belongs_to_many :hobbies 
+  has_and_belongs_to_many :industries
+  has_and_belongs_to_many :nationalities
+  has_and_belongs_to_many :sports
   
   # :confirmable, 
   devise  :database_authenticatable, :registerable, :recoverable, :rememberable, 
           :trackable, :validatable, :omniauthable, 
           :omniauth_providers => [:facebook]
 
-  attr_accessor :name, :wharton_email, :cluster_number, :class_year, :frequency, :first_dinner, :industry, :hobby, :nationality, :suggestions
+  attr_accessor :name
 
   # Set up Validations
   validates :first_name, presence: true, length: { maximum: 50 }

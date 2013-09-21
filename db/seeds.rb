@@ -5,3 +5,24 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+INDUSTRIES = Industry.create([{name: "Consulting"}, {name: "CPG, Marketing, Retail"}, {name: "Entrepreneurship"},
+                              {name: "Government, Non-Profit"}, {name: "Health Care"},
+                              {name: "Investment Banking"}, {name: "Investment Management, Hedge Funds"},
+                              {name: "Media, Entertainment"}, {name: "Private Equity, Venture Capital"},
+                              {name: "Real Estate"}, {name: "Technology"}, {name: "Other"}])
+                              
+SPORTS = Sport.create([{name: "Basketball, Football, Baseball, Hockey"}, {name: "Soccer, Rugby"}, {name: "Golf, Tennis"},
+                              {name: "Running, Swimming"}, {name: "Winter"},
+                              {name: "Hiking, Outdoors"}])
+                              
+HOBBIES = Hobby.create([{name: "Dancing"}, {name: "Movies, Television"}, {name: "Art, Drawing"},
+                              {name: "Music, Singing"}, {name: "Reading, Writing"},
+                              {name: "Photography"}, {name: "Music, Singing"},
+                              {name: "Shopping"}, {name: "Computers, Gaming"},
+                              {name: "Traveling"}, {name: "Other"}])
+                              
+NATIONALITIES = Nationality.create([{name: "United States"}, {name: "East Asia"}, {name: "Southeast Asia"},
+                              {name: "South Asia"}, {name: "Europe"},
+                              {name: "Middle East"}, {name: "Africa"},
+                              {name: "Latin America"}])
