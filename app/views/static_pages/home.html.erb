@@ -5,23 +5,14 @@
 	</section>
   </div> 
 <% else %>
-	<br></br>
-	<br></br>
-	<br></br>
-	<br></br>
   <div class="center ">
-    <h1>Welcome to Wharton SmallGroups</h1>
-	<div id="subscribers"></div>
+    <h1 id='welcome'>Welcome to Wharton SmallGroups</h1>
+	<div id="subscribers">
 
 	<!-- Login Links -->
     <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-default btn-primary" %>
     <%= link_to image_tag("FaceBook_Button_20130504.jpg", alt: "Sign in with Facebook") , user_omniauth_authorize_path(:facebook) %>
-    
-    
-	<br></br>
-	<br></br>
-	<br></br>
-	<br></br>
+    </div>
   </div>
   
 <% end %> 
