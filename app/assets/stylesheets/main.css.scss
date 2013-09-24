@@ -15,7 +15,7 @@ html {
 }
 
 body {
-  background-image:url(/assets/cluster3background.jpg);
+  background-image:asset-data-url('cluster3background.jpg');
   background-attachment: fixed;
   background-size: 100%;
   padding-top: 60px;
