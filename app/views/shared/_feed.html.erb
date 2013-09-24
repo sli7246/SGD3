@@ -1,5 +1,5 @@
-<h2>Please provide the following information to help us schedule your dinner. </h2>
-<h2>You may update your information at anytime in the future</h2>
+<h2>Please provide the following information to help us schedule your event</h2>
+<h2>You may update your information at any time after submission</h2>
 
 <div class="row">
   <div class="span8 offset2">
@@ -15,20 +15,20 @@
 			</div>
 			<div class="span4" id="left_box">
 				<%= f.label :cluster_number, "Which cluster are you in?" %>
-				<%= f.select(:cluster_number, options_for_select([["",0],[1, 1], [2, 2], ["BumbleBees (3-Also the best)", 3], [4, 4]], current_user.cluster_number)) %>
+				<%= f.select(:cluster_number, options_for_select([["",0],[1, 1], [2, 2], [3, 3], [4, 4]], current_user.cluster_number)) %>
 			</div>
 			<div class="span4"  id="right_box">
 				<%= f.label :class_year, "What is your expected graduation year?" %>
 				<%= f.select(:class_year, options_for_select([[2014, 2014], [2015, 2015]], current_user.class_year)) %>
 			</div> 
 			<div class='span4' id='left_box'>
-				<%= f.label :frequency, "How often would you like to participate in Small Group Dinners?" %>
-				<%= f.select(:frequency, options_for_select([["every two weeks", "every two weeks"], 
-															["monthly", "monthly"], ["every two months", "every two months"], 
-															["once a semester", "once a semester"]], current_user.frequency)) %>
+				<%= f.label :frequency, "How often would you like to participate in small group events?" %>
+				<%= f.select(:frequency, options_for_select([["Every two weeks", "every two weeks"], 
+															["Monthly", "monthly"], ["Every two months", "every two months"], 
+															["Once a semester", "once a semester"]], current_user.frequency)) %>
 			</div>
 			<div class='span4' id='right_box'>
-				<%= f.label :first_dinner, "Do you want to participate in the very first Small Group Dinner?" %>
+				<%= f.label :first_dinner, "Do you want to participate in the very first small group event?" %>
 				<%= f.select(:first_dinner, options_for_select([["Yes", "Yes"], ["No", "No"]], current_user.first_dinner)) %>
 			</div>
 			</div>
@@ -36,7 +36,7 @@
 			
 			<div class="form-inline row span8" id="row_fields">
 			<div class='span4' id='left_box'>
-				<h3>Industry</h3>
+				<h3>Industries</h3>
 				<h5>Which industries/job functions are you most interested in?</h5>
 				<% for industry in Industry.all %>
 				<div>
@@ -60,8 +60,8 @@
 			
 			<div class="form-inline row span8" id="row_fields">
 			<div class='span4' id='left_box'>
-				<h3>Geographical interests</h3>
-				<h5>What parts of the world are you most interested in?</h5>
+				<h3>Nationalities</h3>
+				<h5>Which nationalities/geographies do you most relate with?</h5>
 				<% for nationality in Nationality.all %>
 				<div>
 				  <%= check_box_tag "user[nationality_ids][]", nationality.id, current_user.nationalities.include?(nationality) %>

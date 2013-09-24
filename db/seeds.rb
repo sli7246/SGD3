@@ -22,7 +22,7 @@ HOBBIES = Hobby.create([{name: "Dancing"}, {name: "Movies, Television"}, {name: 
                               {name: "Shopping"}, {name: "Computers, Gaming"},
                               {name: "Traveling"}, {name: "Other"}])
                               
-NATIONALITIES = Nationality.create([{name: "United States"}, {name: "East Asia"}, {name: "Southeast Asia"},
+NATIONALITIES = Nationality.create([{name: "North America"}, {name: "East Asia"}, {name: "Southeast Asia"},
                               {name: "South Asia"}, {name: "Europe"},
                               {name: "Middle East"}, {name: "Africa"},
                               {name: "Latin America"}])
