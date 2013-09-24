@@ -19,7 +19,7 @@
 			</div>
 			<div class="span4"  id="right_box">
 				<%= f.label :class_year, "What is your expected graduation year?" %>
-				<%= f.select(:class_year, options_for_select([[2014, 2014], [2015, 2015]], current_user.class_year)) %>
+				<%= f.select(:class_year, options_for_select([["",0],[2014, 2014], [2015, 2015]], current_user.class_year)) %>
 			</div> 
 			<div class='span4' id='left_box'>
 				<%= f.label :frequency, "How often would you like to participate in small group events?" %>
@@ -28,7 +28,7 @@
 															["Once a semester", "once a semester"]], current_user.frequency)) %>
 			</div>
 			<div class='span4' id='right_box'>
-				<%= f.label :first_dinner, "Do you want to participate in the very first small group event?" %>
+				<%= f.label :first_dinner, "Do you want to participate in the next dinner?(Set to no if you want a break)" %>
 				<%= f.select(:first_dinner, options_for_select([["Yes", "Yes"], ["No", "No"]], current_user.first_dinner)) %>
 			</div>
 			</div>
@@ -86,7 +86,7 @@
 
 			<div class="form-inline row span8" id="row_fields">
 			<div class='span8' id='left_box'>
-				<%= f.label :suggestions, "Do you have suggestions for other things to include in your profile?" %>
+				<%= f.label :suggestions, "Do you have suggestions for how we can improve your experience?" %>
 				<%= f.text_field :suggestions %>
 			</div>
 			</div>
