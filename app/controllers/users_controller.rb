@@ -1,8 +1,13 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!, only: [:index, :edit, :destroy, :following, :followers, :update]
 
-  
   def show
+    @users = User.all
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @user }
+    end
   end
   
   def update
@@ -14,7 +19,6 @@ class UsersController < ApplicationController
 
     redirect_to root_path
   end
-  
   
   private
   

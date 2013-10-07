@@ -13,12 +13,12 @@ INDUSTRIES = Industry.create([{name: "Consulting"}, {name: "CPG, Marketing, Reta
                               {name: "Real Estate"}, {name: "Technology"}, {name: "Other"}])
                               
 SPORTS = Sport.create([{name: "Basketball, Football, Baseball, Hockey"}, {name: "Soccer, Rugby"}, {name: "Golf, Tennis"},
-                              {name: "Running, Swimming"}, {name: "Winter"},
+                              {name: "Running, Swimming"}, {name: "Winter Sports"},
                               {name: "Hiking, Outdoors"}])
                               
 HOBBIES = Hobby.create([{name: "Dancing"}, {name: "Movies, Television"}, {name: "Art, Drawing"},
                               {name: "Music, Singing"}, {name: "Reading, Writing"},
-                              {name: "Photography"}, {name: "Music, Singing"},
+                              {name: "Photography"},
                               {name: "Shopping"}, {name: "Computers, Gaming"},
                               {name: "Traveling"}, {name: "Other"}])
                               
