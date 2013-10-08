@@ -38,7 +38,7 @@
 			<div class='span4' id='left_box'>
 				<h3>Industries</h3>
 				<h5>Which industries/job functions are you most interested in?</h5>
-				<% for industry in Industry.all %>
+				<% for industry in Industry.find(:all, :order => "id ASC") %>
 				<div>
 				  <%= check_box_tag "user[industry_ids][]", industry.id, current_user.industries.include?(industry) %>
 				  <%= industry.name %>
@@ -49,7 +49,7 @@
 			<div class='span4' id='right_box'>
 				<h3>Hobbies</h3>
 				<h5>What are your favorite hobbies/interests?</h5>
-				<% for hobby in Hobby.all %>
+				<% for hobby in Hobby.find(:all, :order => "id ASC") %>
 				<div>
 				  <%= check_box_tag "user[hobby_ids][]", hobby.id, current_user.hobbies.include?(hobby) %>
 				  <%= hobby.name %>
@@ -62,7 +62,7 @@
 			<div class='span4' id='left_box'>
 				<h3>Nationalities</h3>
 				<h5>Which nationalities/geographies do you most relate with?</h5>
-				<% for nationality in Nationality.all %>
+				<% for nationality in Nationality.find(:all, :order => "id ASC") %>
 				<div>
 				  <%= check_box_tag "user[nationality_ids][]", nationality.id, current_user.nationalities.include?(nationality) %>
 				  <%= nationality.name %>
@@ -73,7 +73,7 @@
 			<div class='span4' id='right_box'>
 				<h3>Sports</h3>
 				<h5>What are your favorite sports?</h5>
-				<% for sport in Sport.all %>
+				<% for sport in Sport.find(:all, :order => "id ASC") %>
 				<div>
 				  <%= check_box_tag "user[sport_ids][]", sport.id, current_user.sports.include?(sport) %>
 				  <%= sport.name %>
