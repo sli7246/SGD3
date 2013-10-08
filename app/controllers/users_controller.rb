@@ -2,11 +2,16 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!, only: [:index, :edit, :destroy, :following, :followers, :update]
 
   def show
-    @users = User.all
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @user }
+    if current_user.email == 'johnsli@msn.com'
+    
+      @users = User.all
+  
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @user }
+      end
+    else 
+      redirect_to root_path
     end
   end
   
@@ -17,6 +22,7 @@ class UsersController < ApplicationController
     current_user.sport_ids = params[:user][:sport_ids] ||= []
     current_user.nationality_ids = params[:user][:nationality_ids] ||= []
 
+    flash[:success] = "Your preferences have been saved. We will send you your dinner group shortly"
     redirect_to root_path
   end
   
