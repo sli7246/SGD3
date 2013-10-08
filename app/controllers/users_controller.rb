@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!, only: [:index, :edit, :destroy, :following, :followers, :update]
 
   def show
-    if current_user.email == 'johnsli@msn.com'
+    if current_user.email == 'johnsli@msn.com' || current_user.email == "shuoz@wharton.upenn.edu"
     
       @users = User.all
   
